@@ -1,0 +1,26 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "Music player as study case",
+  "main": "main.html",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.11",
+    "cssnano": "^3.10.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-compass": "^2.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "run-sequence": "^1.2.2",
+    "webpack-stream": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "guilhrmefp",
+  "license": "MIT"
+}

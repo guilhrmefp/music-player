@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Music player</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="error hide">Ops, something went wrong ):</p>
+
+      <div class="player-wrap">
+        <div class="player">
+          <div class="player__info">
+            <div class="player__volume">
+              <span class="player__volume-icon icon icon-sound" data-muted="0"></span>
+              <input class="player__volume-level" type="range" value="0" step="0.1" max="1">
+            </div>
+            <h1 class="player__title"></h1>
+            <h2 class="player__artist"></h2>
+            <div class="player__status">
+              <input class="player__range" type="range" value="0"" max="100">
+              <progress class="player__progress" value="0" max="100"></progress>
+              <audio src=""></audio>
+            </div>
+          </div>
+          <div class="player__body">
+            <span class="player__toggle-playlist icon icon-list-dot"></span>
+            <figure class="player__cover">
+              <img src="">
+            </figure>
+            <div class="player__controls">
+              <button class="player__btn player__btn--prev">
+                <span class="icon icon-prev"></span>
+              </button>
+              <button class="player__btn player__btn--play" value="0">
+                <span class="icon icon-play"></span>
+              </button>
+              <button class="player__btn player__btn--next">
+                <span class="icon icon-next"></span>
+              </button>
+            </div>
+          </div>
+          <aside class="player__playlist">
+            <ol class="playlist"></ol>
+          </aside>
+        </div>
+      </div>
+
+      <div class="new-song">
+        <span class="new-song__btn">
+          <i class="icon icon-play"></i>
+        </span>
+
+        <div class="modal__backdrop" id="new-song">
+          <div class="modal">
+            <form class="modal__content" id="send-song" method="post">
+              <div class="modal__header">
+              <h3 class="modal__title">ADD SONG</h3>
+              <span class="modal__close icon icon-close"></span>
+              </div>
+              <div class="modal__body">
+                <div class="form__group">
+                  <label for="txtSong" class="form__label">Song title</label>
+                  <input type="text" required id="txtSong" name="txtSong" class="form__field">
+                </div>
+                <div class="form__group">
+                  <label for="txtSong" class="form__label">Artist</label>
+                  <input type="text" required id="txtSong" name="txtArtist" class="form__field">
+                </div>
+                <div class="form__group form__group--file">
+                  <label for="txtSong" class="form__label text--center">Send file</label>
+                  <div class="btn__group">
+                    <label for="file-upload" class="btn btn--primary btn--file btn--upload">Upload</label>
+                    <button type="button" class="btn btn--secondary btn--file btn--url">URL</button>
+                  </div>
+                  <div class="file-name">
+                    <input type="file" id="file-upload" required accept="audio/*">
+                    <input type="url" id="file-name" disabled name="txtUrl" class="form__field form__field--shadow text--center show">
+                    <label for="fileName">Insert file URL here</label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal__footer">
+                <button type="submit" class="btn btn--success">Add to playlist</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">Made with <span class="heart">❤</span> based on Charles Patterson's <a href="https://dribbble.com/shots/4240318-Made-with-InVision-Studio-Music-Player" target="_blank">Dribbble</a></p>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
