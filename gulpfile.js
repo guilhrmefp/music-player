@@ -59,15 +59,6 @@ gulp.task('js', function() {
          }));
 });
 
-//copiar html
-gulp.task('html', function() {
-  return gulp.src('src/*.html')
-         .pipe(gulp.dest('dist'))
-         .pipe(browserSync.reload({ //metodo adicionado para live-reload do browser
-            stream: true
-         }));
-});
-
 //apagar diretório final
 gulp.task('clean:dist', function() {
   return del.sync('dist');
@@ -82,10 +73,10 @@ gulp.task('clean:cache', function(callback) {
 gulp.task('browserSync', function(){
   browserSync.init({
     server: {
-      baseDir: 'dist'
+      baseDir: './'
     },
     port: 8080,
-    startPath: 'main.html'
+    startPath: 'index.html'
   });
 });
 
@@ -95,14 +86,13 @@ gulp.task('watch', function(){
   //um watch separado pra cada tipo de arquivo
   gulp.watch('src/sass/**/*.+(scss|sass)', ['sass']);
   gulp.watch('src/js/*.js', ['js']);
-  gulp.watch('src/*.html', ['html']);
 });
 
 //compilar projeto final
 gulp.task('build', function(callback){
   runSequence(
     'clean:dist',
-    ['sass', 'js', 'html'],
+    ['sass', 'js'],
     callback
   );
 });
